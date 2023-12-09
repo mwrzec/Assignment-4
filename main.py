@@ -9,7 +9,7 @@ if __name__ == '__main__':
     resource_manager.ress = data_persistence.data_load()
 
     while True:
-        ui.show_menu()
+        ui.main_menu()
         selection = ui.get_user_input("Enter your choice: ") 
 
         if selection == '1':
