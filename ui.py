@@ -1,22 +1,22 @@
-# ui.py
-from resource_manage import ResourceManager
 
+from resource_manage import ResourceManager
+"""Creates UI class, and functions to do with the user interface"""
 class UI:
-    def main_menu(self):
+    def main_menu(self): #creates main menu
         print("1. Create Resource")
         print("2. Search Resource")
         print("3. Edit Resource")
         print("4. Delete Resource")
         print("5. Exit")
 
-    def user_input(self, message):
+    def user_input(self, message): #allows user input
         while True:
             try:
                 return input(message)
             except Exception as e:
                 print(f"Error: {e}")
 
-    def create_resource(self, resource_manager):
+    def create_resource(self, resource_manager): #user input interface
         name = self.user_input("Enter resource name: ")
         att1 = self.user_input("Enter attribute #1: ")
         att2 = self.user_input("Enter attribute #2: ")
@@ -39,7 +39,7 @@ class UI:
         resource_manager.edit_resource(res_id, new_values)
         print("Resource updated successfully.")
 
-    def delete_resource(self, resource_manager):
+    def delete_resource(self, resource_manager): #removes unwanted resourses
         res_id = self.user_input("Enter resource ID to remove: ")
         resource_manager.delete_resource(res_id)
         print("Resource has been successfully removed.")

@@ -2,7 +2,7 @@ from ui import UI
 from resource_manage import ResourceManager
 from data_persistence import DataPersistence
 
-if __name__ == '__main__':
+if __name__ == '__main__': #if name of module == __main__ runs the code
     ui = UI()
     data_persistence = DataPersistence("data.json")
     resource_manager = ResourceManager()
@@ -12,7 +12,7 @@ if __name__ == '__main__':
     while True:
         ui.main_menu()
         selection = ui.user_input("Enter your choice: ")
-
+# checks which option is selected before promting menu
         if selection == "1":
             ui.create_resource(resource_manager)
         elif selection == "2":

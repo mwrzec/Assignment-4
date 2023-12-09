@@ -1,4 +1,5 @@
-class Resource:
+"""creates and initializes resource class"""
+class Resource: 
     def __init__(self, id, name, att1, att2):
         self.id = id
         self.name = name

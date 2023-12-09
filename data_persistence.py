@@ -1,10 +1,10 @@
 import json
 
-class DataPersistence:
+class DataPersistence: #creates data persistence class and initializes
     def __init__(self, file_name):
         self.file_name = file_name
 
-    def data_save(self, ress):
+    def data_save(self, ress): #allows you to save the data inputted
         data = []
         for resource in ress:
             data.append({
@@ -16,7 +16,7 @@ class DataPersistence:
         with open(self.file_name, 'w') as file:
             json.dump(data, file)
 
-    def data_load(self):
+    def data_load(self): #loads inputed data
         try:
             with open(self.file_name, 'r') as file:
                 data = json.load(file)
@@ -28,5 +28,5 @@ class DataPersistence:
                     ress.append(new_res)
 
                 return ress
-        except FileNotFoundError:
+        except FileNotFoundError: #shows file not found if doesnt exist
             return []
