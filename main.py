@@ -1,28 +1,26 @@
 from ui import UI
-from resource_manage import res_manage
+from resource_manage import ResourceManager 
 from data_persistence import DataPersistence
-if __name__ == 'main':
-    ui = UI()
-    data_persistence = DataPersistence("data.json")
-    resource_manage = res_manage()
 
-    resource_manage.ress = data_persistence.data_load()
+if __name__ == '__main__': 
+    data_persistence = DataPersistence("data.json")
+    resource_manager = ResourceManager() 
+    resource_manager.ress = data_persistence.data_load()
 
     while True:
         ui.show_menu()
-        selection = ui.user_input("Enter your choice: ")
+        selection = ui.get_user_input("Enter your choice: ") 
 
         if selection == '1':
-            ui.create_res(resource_manage)
+            ui.create_resource(resource_manager) 
         elif selection == '2':
-            ui.create_res(resource_manage)
+            ui.search_resource(resource_manager) 
         elif selection == '3':
-            ui.create_res(resource_manage)
+            ui.edit_resource(resource_manager)  
         elif selection == '4':
-            ui.create_res(resource_manage)
+            ui.delete_resource(resource_manager)
         elif selection == '5':
-
-            data_persistence.data_save(resource_manage.ress)
+            data_persistence.data_save(resource_manager.ress)
             print("Exiting Program.")
             break
         else:
