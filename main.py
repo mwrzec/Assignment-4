@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
     while True:
         ui.main_menu()
-        selection = ui.get_user_input("Enter your choice: ") 
+        selection = ui.user_input("Enter your choice: ") 
 
         if selection == '1':
             ui.create_resource(resource_manager) 
