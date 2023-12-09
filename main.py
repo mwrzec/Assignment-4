@@ -1,5 +1,5 @@
 from ui import UI
-from resource_manage import ResourceManager 
+from resource_manage import res_manage 
 from data_persistence import DataPersistence
 
 if __name__ == '__main__': 
