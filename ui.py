@@ -13,32 +13,32 @@ class UI:
             except Exception as e:
                 print(f"Error: {e}")
 
-    def make_res(self, res_manage):
+    def create_resource(self, resource_manager):
         name = self.user_input("Enter resource name: ")
         att1 = self.user_input("Enter attribute #1: ")
         att2 = self.user_input("Enter attribute #2: ")
-        new_res = res_manage.make_res(name, att1, att2)
+        new_res = resource_manager.create_resource(name, att1, att2)
         print(f"Resource created with ID: {new_res.id}")
 
-    def search_res(self, res_manage):
+    def search_resource(self, resource_manager):
         key_att = self.user_input("Enter key attribute: ")
         non_key_att = self.user_input("Enter non-key attribute: ")
-        matching_res = res_manage.search_res(key_att, non_key_att)
+        matching_res = resource_manager.search_resource(key_att, non_key_att)
         self.display_res(matching_res)
 
-    def edit_res(self, res_manage):
+    def edit_resource(self, resource_manager):
         res_id = self.user_input("Enter resource ID to edit: ")
         new_values = {
             'name': self.user_input("Enter new name: "),
             'att1': self.user_input("Enter new attribute #1: "),
             'att2': self.user_input("Enter new attribute #2: "),
         }
-        res_manage.edit_res(res_id, new_values)
+        resource_manager.edit_resource(res_id, new_values)
         print("Resource updated successfully.")
 
-    def delete_res(self, res_manage):
+    def delete_resource(self, resource_manager):
         res_id = self.user_input("Enter resource ID to remove: ")
-        res_manage.delete_res(res_id)
+        resource_manager.delete_resource(res_id)
         print("Resource has been successfully removed.")
 
     def display_res(self, ress):
