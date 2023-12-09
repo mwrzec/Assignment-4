@@ -1,8 +1,8 @@
-class res_manage:
+class ResourceManager:
     def __init__(self):
         self.ress = []
 
-    def create_res(self,name, att1,att2):
+    def create_res(self, name, att1, att2):
         res_id = len(self.ress) + 1
         new_res = Resource(res_id, name, att1, att2)
         self.ress.append(new_res)
@@ -16,13 +16,12 @@ class res_manage:
                     matching_res.append(resource)
         return matching_res
     
-    def edit_res(self, res_id, new_value):
+    def edit_res(self, res_id, new_values):
         for resource in self.ress:
-            if str(resource.id) == resource.id:
-                for key, value in new_value.items():
+            if str(resource.id) == res_id:
+                for key, value in new_values.items():
                     if key != 'id':
                         setattr(resource, key, value)
-
                 break
     
     def delete_res(self, res_id):
