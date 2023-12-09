@@ -8,23 +8,25 @@ class DataPersistence:
         data = []
         for resource in ress:
             data.append({
-                'id' = resource.id,
-                'name' = resource.name,
-                'att1' = resource.att1,
-                'att2' = resource.att2, 
+                'id': resource.id,
+                'name': resource.name,
+                'att1': resource.att1,
+                'att2': resource.att2,
             })
         with open(self.file_name, 'w') as file:
             json.dump(data, file)
 
     def data_load(self):
         try:
-            with open(self.file_name, 'w') as file:
+            with open(self.file_name, 'r') as file:
                 data = json.load(file)
 
+                ress = []
+
                 for item in data:
-                    new_res = Resource(item['id'],item['name'], item['att1'],item['att2'])
+                    new_res = Resource(item['id'], item['name'], item['att1'], item['att2'])
                     ress.append(new_res)
 
-                    return ress
+                return ress
         except FileNotFoundError:
             return []
