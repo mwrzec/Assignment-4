@@ -12,15 +12,15 @@ if __name__ == 'main':
         ui.show_menu()
         selection = ui.user_input("Enter your choice: ")
 
-        if selection == 1:
+        if selection == '1':
             ui.create_res(resource_manage)
-        elif selection == 2:
+        elif selection == '2':
             ui.create_res(resource_manage)
-        elif selection == 3:
+        elif selection == '3':
             ui.create_res(resource_manage)
-        elif selection == 4:
+        elif selection == '4':
             ui.create_res(resource_manage)
-        elif selection == 5:
+        elif selection == '5':
 
             data_persistence.data_save(resource_manage.ress)
             print("Exiting Program.")
