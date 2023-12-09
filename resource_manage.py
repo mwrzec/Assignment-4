@@ -1,4 +1,4 @@
-# resource_manager.py
+
 class ResourceManager:
     def __init__(self):
         self.ress = []
