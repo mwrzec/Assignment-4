@@ -1,3 +1,6 @@
+# ui.py
+from resource_manage import ResourceManager
+
 class UI:
     def main_menu(self):
         print("1. Create Resource")

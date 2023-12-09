@@ -1,3 +1,4 @@
+from resource_1 import Resource
 class ResourceManager:
     def __init__(self):
         self.ress = []
