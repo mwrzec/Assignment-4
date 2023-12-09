@@ -1,14 +1,15 @@
+# resource_manager.py
 class ResourceManager:
     def __init__(self):
         self.ress = []
 
-    def create_res(self, name, att1, att2):
+    def create_resource(self, name, att1, att2):
         res_id = len(self.ress) + 1
         new_res = Resource(res_id, name, att1, att2)
         self.ress.append(new_res)
         return new_res
     
-    def search_res(self, key_att, non_key_att):
+    def search_resource(self, key_att, non_key_att):
         matching_res = []
         for resource in self.ress:
             if key_att == str(resource.id) or key_att == resource.name:
@@ -16,7 +17,7 @@ class ResourceManager:
                     matching_res.append(resource)
         return matching_res
     
-    def edit_res(self, res_id, new_values):
+    def edit_resource(self, res_id, new_values):
         for resource in self.ress:
             if str(resource.id) == res_id:
                 for key, value in new_values.items():
@@ -24,5 +25,5 @@ class ResourceManager:
                         setattr(resource, key, value)
                 break
     
-    def delete_res(self, res_id):
+    def delete_resource(self, res_id):
         self.ress = [resource for resource in self.ress if str(resource.id) != res_id]
