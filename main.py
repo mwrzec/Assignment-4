@@ -3,8 +3,9 @@ from resource_manage import res_manage
 from data_persistence import DataPersistence
 
 if __name__ == '__main__': 
+    ui = UI()
     data_persistence = DataPersistence("data.json")
-    resource_manager = ResourceManager() 
+    resource_manager = res_manage() 
     resource_manager.ress = data_persistence.data_load()
 
     while True:
